@@ -1,12 +1,14 @@
 from django.shortcuts import render
-
-# Create your views here.
 from .models import Contact
 from .forms import ContactForm
+from django.http import HttpResponse
 
-def blog_post(request):
+# Create your views here.
+
+
+def blog_post(request): 
 	template_name = 'form.html'
-	if request.method =='POST':
+	if request.method == 'POST':
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			form.save()
@@ -14,7 +16,7 @@ def blog_post(request):
 	else:
 		form = ContactForm()
 	context = {
-	'form':form
+		'form':form
 
-	}
+		}
 	return render(request,template_name,context)
