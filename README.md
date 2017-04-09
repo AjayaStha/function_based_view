@@ -1,1 +1,1 @@
-# function_based_view
+# a simple example of function_based_view
